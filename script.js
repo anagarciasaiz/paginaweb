@@ -1,33 +1,5 @@
 // script.js
 
-// Funciones para mostrar/ocultar secciones
-function mostrarHistoria() {
-    mostrarSeccion("historia");
-    ocultarSeccion("lugares");
-    ocultarSeccion("gastronomia");
-}
-
-function mostrarLugares() {
-    mostrarSeccion("lugares");
-    ocultarSeccion("historia");
-    ocultarSeccion("gastronomia");
-}
-
-function mostrarGastronomia() {
-    mostrarSeccion("gastronomia");
-    ocultarSeccion("historia");
-    ocultarSeccion("lugares");
-}
-
-// Función auxiliar para mostrar una sección y ocultar las demás
-function mostrarSeccion(id) {
-    document.getElementById(id).style.display = "block";
-}
-
-function ocultarSeccion(id) {
-    document.getElementById(id).style.display = "none";
-}
-
 // Interacción 1: Cambiar el color de fondo al hacer clic en un botón
 const cambiarColorBtn = document.getElementById('cambiarColorBtn');
 const body = document.body;
@@ -67,15 +39,27 @@ function getRandomColor() {
     return color;
 }
 
-// Interacción 1: Saludo personalizado
-let nombre = prompt("Ingresa tu nombre:");
-alert(`Hola, ${nombre}!`);
+// Interacción 4: Saludo personalizado al cargar la página
+window.onload = () => {
+    let nombre = prompt("Ingresa tu nombre:");
+    alert(`Hola, ${nombre}!`);
+};
 
-// Interacción 2: Mostrar/Mostrar información sobre Cuenca
-let respuesta = prompt("¿Quieres saber más sobre Cuenca? (Sí/No)").toLowerCase();
+// Iteración 5: Mostrar/Mostrar información sobre Cuenca
+const mostrarInfoBtn = document.getElementById('mostrarInfoBtn');
 
-if (respuesta === "si") {
-    mostrarInformacionCuenca();
-} else {
-    alert("¡Gracias por visitar!");
+mostrarInfoBtn.addEventListener('click', () => {
+    let respuesta = prompt("¿Quieres saber más sobre Cuenca? (Sí/No)").toLowerCase();
+
+    if (respuesta === "si") {
+        mostrarInformacionCuenca();
+    } else {
+        alert("¡Gracias por visitar!");
+    }
+});
+
+// Función para mostrar información sobre Cuenca
+function mostrarInformacionCuenca() {
+    alert("Cuenca es una hermosa ciudad española con una rica historia y patrimonio cultural.");
 }
+
