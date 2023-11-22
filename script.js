@@ -16,18 +16,29 @@ toggleSectionBtn.addEventListener('click', () => {
     historiaSection.style.display = (historiaSection.style.display === 'none' || historiaSection.style.display === '') ? 'block' : 'none';
 });
 
-// Interacción 3: Cambiar la imagen al pasar el mouse sobre otra imagen
+// iteracion 3 . cambiar imagen al pasar el raton por encima
+
+const nuevaImagenSrc = 'https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/castilla-mancha/cuenca-panoramica-s643574629.jpg';
+
 const imagenPuente = document.getElementById('imagenPuente');
-const nuevaImagenSrc = 'https://www.cuenca.es/wp-content/uploads/2019/10/IMG_20191025_123528.jpg'
 
 imagenPuente.addEventListener('mouseover', () => {
-    imagenPuente.src = nuevaImagenSrc;
+    cambiarImagenPuente();
 });
 
 imagenPuente.addEventListener('mouseout', () => {
-    // Puedes restaurar la imagen original si es necesario
-    imagenPuente.src = 'https://desconectar.com/wp-content/uploads/2019/06/Puente-de-San-Pablo.jpg';
+    restaurarImagenOriginal();
 });
+
+function cambiarImagenPuente() {
+    imagenPuente.src = nuevaImagenSrc;
+}
+
+function restaurarImagenOriginal() {
+    // Puedes restaurar la imagen original si es necesario
+    imagenPuente.src = 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Carl_Wilhelm_von_Heideck_-_Die_Br%C3%BCcke_von_Cuenca_-_WAF_334_-_Bavarian_State_Painting_Collections.jpg';
+}
+
 
 // Función para obtener un color aleatorio
 function getRandomColor() {
@@ -48,18 +59,19 @@ window.onload = () => {
 // Iteración 5: Mostrar/Mostrar información sobre Cuenca
 const mostrarInfoBtn = document.getElementById('mostrarInfoBtn');
 
-mostrarInfoBtn.addEventListener('click', () => {
-    let respuesta = prompt("¿Quieres saber más sobre Cuenca? (Sí/No)").toLowerCase();
+if (mostrarInfoBtn) {
+    mostrarInfoBtn.addEventListener('click', () => {
+        let respuesta = prompt("¿Quieres saber más sobre Cuenca? (Sí/No)").toLowerCase();
 
-    if (respuesta === "si") {
-        mostrarInformacionCuenca();
-    } else {
-        alert("¡Gracias por visitar!");
-    }
-});
+        if (respuesta === "si") {
+            mostrarInformacionCuenca();
+        } else {
+            alert("¡Gracias por visitar!");
+        }
+    });
+}
 
 // Función para mostrar información sobre Cuenca
 function mostrarInformacionCuenca() {
-    alert("Cuenca es una hermosa ciudad española con una rica historia y patrimonio cultural.");
+    alert(" La Catedral de Cuenca es la primera catedral gótica construida en España. Cuenca es famosa por su Semana Santa, que es una de las más impresionantes de España");
 }
-
