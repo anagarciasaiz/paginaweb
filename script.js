@@ -75,3 +75,19 @@ if (mostrarInfoBtn) {
 function mostrarInformacionCuenca() {
     alert(" La Catedral de Cuenca es la primera catedral gótica construida en España. Cuenca es famosa por su Semana Santa, que es una de las más impresionantes de España");
 }
+
+// formulario de reserva
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function () {
+    // Agrega un listener al formulario
+    document.getElementById("reservaForm").addEventListener("submit", function (event) {
+        // Prevenir el comportamiento predeterminado del formulario
+        event.preventDefault();
+
+        // Muestra un mensaje de éxito
+        alert("¡Formulario enviado con éxito!");
+
+        // Reinicia el formulario
+        document.getElementById("reservaForm").reset();
+    });
+});
