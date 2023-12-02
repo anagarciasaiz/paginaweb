@@ -103,3 +103,26 @@ input[type="submit"]:hover {
     background-color: #005a8a;
 }
 
+
+
+
+/* Media query para pantallas más pequeñas, como tablets */
+@media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    }
+    
+/* Media query para pantallas aún más pequeñas, como móviles */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    }
+
+    #catalogo {
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
